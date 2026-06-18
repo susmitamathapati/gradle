@@ -3,7 +3,7 @@ pipeline {
 
     tools {
         gradle 'Gradle'
-        jdk 'JDK'
+     
     }
 
     stages {
@@ -17,6 +17,8 @@ pipeline {
 
         stage('Build') {
             steps {
+                sh 'gradle build'
+                sh 'javac -version'
                 sh 'gradle build'
             }
         }
